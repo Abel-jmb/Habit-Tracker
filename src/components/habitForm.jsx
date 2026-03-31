@@ -6,15 +6,15 @@ const initialForm = {
   //   completed: false,
 };
 
-const HabitForm = ({addHabit}) => {
+const HabitForm = ({ addHabit }) => {
   const [form, setForm] = useState(initialForm);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.habit) return alert("Tiene que Agregar un Habito...");
+    if (!form.habit.trim()) return alert("Tiene que Agregar un Habito...");
 
-    addHabit(form.habit);
+    addHabit(form.habit.trim());
     handleReset();
   };
 
@@ -31,16 +31,22 @@ const HabitForm = ({addHabit}) => {
 
   return (
     <>
-      <h2>Agregar Habito</h2>
-      <input
-        onChange={handleChange}
-        type="text"
-        name="habit"
-        id="habit"
-        placeholder="Agrega un nuevo habito"
-        value={form.habit}
-      />
-      <button onClick={handleSubmit}>Agregar Habito</button>
+      <section>
+        <h2>Agregar Hábito</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="habit">Nombre del hábito:</label>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="habit"
+            id="habit"
+            placeholder="Ej: Leer 20mins diarios"
+            value={form.habit}
+            required
+          />
+          <button type="submit">Agregar Hábito</button>
+        </form>
+      </section>
     </>
   );
 };
