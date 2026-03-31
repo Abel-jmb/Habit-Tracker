@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useHabits } from "../hooks/useHabits";
 
 const initialForm = {
   //   id: "",
@@ -7,8 +6,7 @@ const initialForm = {
   //   completed: false,
 };
 
-const HabitForm = () => {
-  const { addHabit } = useHabits();
+const HabitForm = ({addHabit}) => {
   const [form, setForm] = useState(initialForm);
 
   const handleSubmit = (e) => {
@@ -17,7 +15,7 @@ const HabitForm = () => {
     if (!form.habit) return alert("Tiene que Agregar un Habito...");
 
     addHabit(form.habit);
-    handleReset()
+    handleReset();
   };
 
   const handleChange = (e) => {
@@ -28,8 +26,8 @@ const HabitForm = () => {
   };
 
   const handleReset = () => {
-    setForm(initialForm)
-  }
+    setForm(initialForm);
+  };
 
   return (
     <>
