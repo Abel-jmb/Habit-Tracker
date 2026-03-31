@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 const initialForm = {
-  //   id: "",
   habit: "",
-  //   completed: false,
 };
 
 const HabitForm = ({ addHabit }) => {
