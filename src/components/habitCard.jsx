@@ -1,4 +1,4 @@
-const HabitCard = ({ habit }) => {
+const HabitCard = ({ habit, toggleHabit, deleteHabit  }) => {
 
   return (
     <article >

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useHabits = () => {
-  const [habits, setHabit] = useState([]);
+  const [habits, setHabits] = useState([]);
 
   const addHabit = (name) => {
     const newHabit = {
@@ -10,8 +10,20 @@ export const useHabits = () => {
       completed: false,
     };
 
-    setHabit([...habits, newHabit]);
+    setHabits([...habits, newHabit]);
   };
 
-  return { habits, addHabit };
+  const toggleHabit = (id) => {
+    setHabits(prev => 
+      prev.map(h => h.id === id ? {...h, completed: !h.completed} : h)
+    )
+  }
+
+  const deleteHabit = (id) => {
+    setHabits(prev => 
+      prev.filter(h => h.id !== id )
+    )
+  }
+
+  return { habits, addHabit, toggleHabit, deleteHabit };
 };
