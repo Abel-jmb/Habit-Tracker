@@ -9,8 +9,8 @@ const HabitCard = ({ habit, toggleHabit, deleteHabit}) => {
         <p>{date}</p>
       </header>
       <div>
-        <label htmlFor="completed">
-          <input type="checkbox" name="completed" checked={completed} onChange={() => toggleHabit(id)}/>
+        <label htmlFor={id}>
+          <input type="checkbox" name="completed" id={id} checked={completed} onChange={() => toggleHabit(id)}/>
         </label>
 
       <button onClick={() => deleteHabit(id)}>Eliminar habito</button>
