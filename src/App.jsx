@@ -3,6 +3,7 @@ import HabitCard from "./components/habitCard";
 import HabitForm from "./components/habitForm";
 import Header from "./components/Header";
 import ProgressBar from "./components/ProgressBar";
+import { ThemeProvider } from "./context/themeContext";
 import { useHabits } from "./hooks/useHabits";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   } = useHabits();
 
   return (
+    <ThemeProvider >
     <main className="min-h-screen bg-white max-w-md mx-auto px-4">
       <Header />
       <HabitForm addHabit={addHabit} />
@@ -32,6 +34,7 @@ function App() {
       />
       <ProgressBar progress={progress}/>
     </main>
+    </ThemeProvider>
   );
 }
 
