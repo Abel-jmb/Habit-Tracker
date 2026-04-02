@@ -6,6 +6,8 @@ export const useHabits = () => {
     return saved ? JSON.parse(saved) : []
   });
 
+  const [filter, setFilter] = useState("all")
+
   useEffect(()=>{
     localStorage.setItem("habits", JSON.stringify(habits))
   }, [habits])
@@ -16,6 +18,7 @@ export const useHabits = () => {
       id: crypto.randomUUID(),
       name,
       completed: false,
+      createdAt: new Date().toISOString(),
     };
 
     setHabits([...habits, newHabit]);
@@ -33,5 +36,15 @@ export const useHabits = () => {
     )
   }
 
-  return { habits, addHabit, toggleHabit, deleteHabit };
+  const filteredHabits = habits.filter(h => {
+    if(filter === "active") return !h.completed
+    if(filter === "done") return h.completed
+    return true
+  })
+
+  const progress = habits.length
+  ? Math.round((habits.filter(h => h.completed).length / habits.length) * 100)
+  : 0
+
+  return { habits, addHabit, toggleHabit, deleteHabit, filter, setFilter, filteredHabits, progress };
 };

@@ -1,15 +1,19 @@
-const HabitCard = ({ habit, toggleHabit, deleteHabit }) => {
+const HabitCard = ({ habit, toggleHabit, deleteHabit}) => {
+
+  const {name, id, completed, createdAt} = habit
+  let date = new Date(createdAt).toLocaleDateString()
   return (
     <article>
       <header>
-        <h3>{habit.name}</h3>
+        <h3>{name}</h3>
+        <p>{date}</p>
       </header>
       <div>
         <label htmlFor="completed">
-          <input type="checkbox" name="completed" checked={habit.completed} onChange={() => toggleHabit(habit.id)}/>
+          <input type="checkbox" name="completed" checked={completed} onChange={() => toggleHabit(id)}/>
         </label>
 
-      <button onClick={() => deleteHabit(habit.id)}>Eliminar habito</button>
+      <button onClick={() => deleteHabit(id)}>Eliminar habito</button>
       </div>
     </article>
   );
