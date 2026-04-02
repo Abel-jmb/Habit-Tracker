@@ -1,6 +1,7 @@
 import FilterBar from "./components/FilterBar";
 import HabitCard from "./components/habitCard";
 import HabitForm from "./components/habitForm";
+import Header from "./components/Header";
 import ProgressBar from "./components/ProgressBar";
 import { useHabits } from "./hooks/useHabits";
 
@@ -15,8 +16,8 @@ function App() {
   } = useHabits();
 
   return (
-    <>
-      <h1>Habit Tracker</h1>
+    <main>
+      <Header />
       <HabitForm addHabit={addHabit} />
       {filteredHabits.map((h) => (
         <HabitCard
@@ -30,7 +31,7 @@ function App() {
         setFilter={setFilter}
       />
       <ProgressBar progress={progress}/>
-    </>
+    </main>
   );
 }
 
