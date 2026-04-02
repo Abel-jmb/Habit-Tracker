@@ -16,7 +16,7 @@ function App() {
   } = useHabits();
 
   return (
-    <main>
+    <main className="min-h-screen bg-white max-w-md mx-auto px-4">
       <Header />
       <HabitForm addHabit={addHabit} />
       {filteredHabits.map((h) => (
