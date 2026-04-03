@@ -17,6 +17,7 @@ function App() {
     deleteHabit,
     setFilter,
     filteredHabits,
+    filter,
     progress
   } = useHabits();
 
@@ -26,6 +27,7 @@ function App() {
       <ProgressBar progress={progress}/>
       <FilterBar
         setFilter={setFilter}
+        currentFilter={filter}
       />
       {filteredHabits.map((h) => (
         <HabitCard
