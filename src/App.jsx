@@ -1,12 +1,16 @@
+import { useContext } from "react";
 import FilterBar from "./components/FilterBar";
 import HabitCard from "./components/habitCard";
 import HabitForm from "./components/habitForm";
 import Header from "./components/Header";
 import ProgressBar from "./components/ProgressBar";
-import { ThemeProvider } from "./context/themeContext";
+import ThemeContext from "./context/themeContext";
 import { useHabits } from "./hooks/useHabits";
 
 function App() {
+
+  const {themeClasses} = useContext(ThemeContext)
+
   const {
     addHabit,
     toggleHabit,
@@ -17,8 +21,7 @@ function App() {
   } = useHabits();
 
   return (
-    <ThemeProvider >
-    <main className="min-h-screen bg-white max-w-md mx-auto px-4">
+    <main className={`min-h-screen max-w-md mx-auto px-4 ${themeClasses.bg}`}>
       <Header />
       <HabitForm addHabit={addHabit} />
       {filteredHabits.map((h) => (
@@ -34,7 +37,6 @@ function App() {
       />
       <ProgressBar progress={progress}/>
     </main>
-    </ThemeProvider>
   );
 }
 
