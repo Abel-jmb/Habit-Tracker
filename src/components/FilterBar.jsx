@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import ThemeContext from "../context/themeContext";
+
 const FilterBar = ({ setFilter, currentFilter }) => {
+
+  const {themeClasses} = useContext(ThemeContext)
+
   const getBtnStyles = (filterName) => {
     const isActive = currentFilter === filterName;
 
@@ -12,7 +18,7 @@ const FilterBar = ({ setFilter, currentFilter }) => {
 
   return (
     <div className="bg-purple-900/40 p-3 rounded-2xl border border-purple-700/50">
-      <h2 className="text-purple-200 text-xs font-bold uppercase tracking-widest mb-3 ml-1">
+      <h2 className={`${themeClasses.text} text-xs font-bold uppercase tracking-widest mb-3 ml-1`}>
         Filtrar Hábitos
       </h2>
 

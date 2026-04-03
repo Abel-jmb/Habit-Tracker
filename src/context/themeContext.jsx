@@ -12,7 +12,7 @@ const ThemeProvider = ({ children }) => {
 
   const themeClasses = {
     bg: theme === "light" ? "bg-purple-800" : "bg-purple-950",
-    text: theme === "light" ? "text-gray-900" : "text-white",
+    text: theme === "light" ? "text-purple-200" : "text-white",
     card: theme === "light" ? "bg-gray-100" : "bg-purple-900",
   };
 
