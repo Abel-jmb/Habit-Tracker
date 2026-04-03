@@ -23,19 +23,19 @@ function App() {
   return (
     <main className={`min-h-screen max-w-md mx-auto px-4 ${themeClasses.bg}`}>
       <Header />
-      <HabitForm addHabit={addHabit} />
-      {filteredHabits.map((h) => (
-        <HabitCard
-          key={h.id}
-          habit={h}
-          toggleHabit={toggleHabit}
-          deleteHabit={deleteHabit}
-        />
-      ))}
+      <ProgressBar progress={progress}/>
       <FilterBar
         setFilter={setFilter}
       />
-      <ProgressBar progress={progress}/>
+      {filteredHabits.map((h) => (
+        <HabitCard
+        key={h.id}
+        habit={h}
+        toggleHabit={toggleHabit}
+        deleteHabit={deleteHabit}
+        />
+      ))}
+      <HabitForm addHabit={addHabit} />
     </main>
   );
 }
