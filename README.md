@@ -1,16 +1,48 @@
-# React + Vite
+# HabitTracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta app te permite poder llevar registro de tus hábitos diarios
 
-Currently, two official plugins are available:
+## Tech Stack
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-grey?style=for-the-badge&logo=tailwind-css&logoColor=38B2AC)
 
-## React Compiler
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![JavaScript](https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=flat-square)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- Crear, completar y eliminar hábitos
+- Filtrar por todos, activos y completados
+- Barra de progreso diaria
+- Persistencia con localStorage
+- Modo oscuro/claro
+- Diseño responsive
+
+
+## Screenshots
+- ![Desktop con Habitos](/screenshots/desktop.png)
+- ![Mobile con FAB visible](/screenshots/mobile-fab.png)
+- ![Mobile con el modal abierto](/screenshots/mobile-modal.png)
+- ![Barra de Progreso](/screenshots/progress.png)
+
+
+# Correr localmente
+
+1. Clona el repositorio
+```
+git clone https://github.com/Abel-jmb/Habit-Tracker
+```
+2. Instala dependencias
+```
+npm install
+```
+3. Corre el proyecto
+```
+npm run dev
+```
+
+# Autor
+AbelDev
+
