@@ -17,7 +17,7 @@ const HabitCard = ({ habit, toggleHabit, deleteHabit }) => {
             checked={completed} 
             onChange={() => toggleHabit(id)}
           />
-          <span className="absolute text-purple-950 opacity-0 peer-checked:opacity-100 pointer-events-none left-1 font-bold">✓</span>
+          <span className="absolute text-purple-950 opacity-0 peer-checked:opacity-100 pointer-events-none left-1.5 font-bold">✓</span>
         </label>
 
         <div className="flex flex-col">

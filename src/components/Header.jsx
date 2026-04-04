@@ -7,7 +7,7 @@ const Header = () => {
     <header
       className={`
       flex justify-between items-center p-5 ${themeClasses.bg}
-    `}>
+    lg:p-8` }>
       <h1 className="text-2xl font-black text-white tracking-tight">
         Habit<span className="text-lime-400">Tracker</span>
       </h1>

@@ -17,7 +17,7 @@ const FilterBar = ({ setFilter, currentFilter }) => {
   };
 
   return (
-    <div className="bg-purple-900/40 p-3 rounded-2xl border border-purple-700/50 mb-4">
+    <div className="bg-purple-900/40 p-3 rounded-2xl border border-purple-700/50 mb-4 lg:mb-1">
       <h2 className={`${themeClasses.text} text-xs font-bold uppercase tracking-widest mb-3 ml-1`}>
         Filtrar Hábitos
       </h2>

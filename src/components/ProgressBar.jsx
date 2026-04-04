@@ -1,6 +1,6 @@
 const ProgressBar = ({ progress }) => {
   return (
-    <div className="p-4 bg-purple-900 rounded-xl border border-purple-700 shadow-lg mb-4">
+    <div className="p-4 bg-purple-900 rounded-xl border border-purple-700 shadow-lg mb-4 lg:mb-2">
       <label
         htmlFor="habit-progress"
         className="block mb-2 text-purple-100 font-bold text-sm tracking-wide">

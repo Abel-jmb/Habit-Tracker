@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import FilterBar from "./components/FilterBar";
-import HabitCard from "./components/HabitCard"
-import HabitForm from "./components/HabitForm"
+import HabitCard from "./components/HabitCard";
+import HabitForm from "./components/HabitForm";
 import Header from "./components/Header";
 import ProgressBar from "./components/ProgressBar";
 import ThemeContext from "./context/themeContext";
 import { useHabits } from "./hooks/useHabits";
+import Footer from "./components/Footer";
 
 function App() {
-
-  const {themeClasses} = useContext(ThemeContext)
+  const { themeClasses } = useContext(ThemeContext);
 
   const {
     addHabit,
@@ -18,27 +18,34 @@ function App() {
     setFilter,
     filteredHabits,
     filter,
-    progress
+    progress,
   } = useHabits();
 
   return (
-    <main className={`min-h-screen max-w-md mx-auto px-4 ${themeClasses.bg}`}>
+    <>
+    <main
+      className={`min-h-screen max-w-md mx-auto px-4 ${themeClasses.bg} md:max-w-2xl lg:max-w-4xl`}>
       <Header />
-      <ProgressBar progress={progress}/>
-      <FilterBar
-        setFilter={setFilter}
-        currentFilter={filter}
-      />
-      {filteredHabits.map((h) => (
-        <HabitCard
-        key={h.id}
-        habit={h}
-        toggleHabit={toggleHabit}
-        deleteHabit={deleteHabit}
-        />
-      ))}
-      <HabitForm addHabit={addHabit} />
+      <div className="lg:grid grid-cols-2 lg:gap-6">
+        <div>
+          <ProgressBar progress={progress} />
+          <FilterBar setFilter={setFilter} currentFilter={filter} />
+          <HabitForm addHabit={addHabit} />
+        </div>
+        <div>
+          {filteredHabits.map((h) => (
+            <HabitCard
+              key={h.id}
+              habit={h}
+              toggleHabit={toggleHabit}
+              deleteHabit={deleteHabit}
+            />
+          ))}
+        </div>
+      </div>
+    <Footer />
     </main>
+    </>
   );
 }
 
