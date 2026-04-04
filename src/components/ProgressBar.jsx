@@ -4,7 +4,7 @@ const ProgressBar = ({ progress }) => {
       <label
         htmlFor="habit-progress"
         className="block mb-2 text-purple-100 font-bold text-sm tracking-wide">
-        PROGRESO DE HOY: <span className="text-lime-400">{progress}%</span>
+        TU PROGRESO DE HOY: <span className="text-lime-400">{progress}%</span>
       </label>
       <div className="w-full bg-purple-950 rounded-full h-8 border-2 border-purple-800 p-1 overflow-hidden">
         <div

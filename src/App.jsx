@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import FilterBar from "./components/FilterBar";
-import HabitCard from "./components/habitCard";
-import HabitForm from "./components/habitForm";
+import HabitCard from "./components/HabitCard"
+import HabitForm from "./components/HabitForm"
 import Header from "./components/Header";
 import ProgressBar from "./components/ProgressBar";
 import ThemeContext from "./context/themeContext";
