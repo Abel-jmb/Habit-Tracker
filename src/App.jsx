@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import FilterBar from "./components/FilterBar";
-import HabitCard from "./components/HabitCard";
-import HabitForm from "./components/HabitForm";
-import Header from "./components/Header";
-import ProgressBar from "./components/ProgressBar";
-import ThemeContext from "./context/themeContext";
-import { useHabits } from "./hooks/useHabits";
-import Footer from "./components/Footer";
+import FilterBar from "./components/FilterBar.jsx";
+import HabitCard from "./components/HabitCard.jsx";
+import HabitForm from "./components/HabitForm.jsx";
+import Header from "./components/Header.jsx";
+import ProgressBar from "./components/ProgressBar.jsx";
+import ThemeContext from "./context/themeContext.jsx";
+import { useHabits } from "./hooks/useHabits.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   const { themeClasses } = useContext(ThemeContext);
